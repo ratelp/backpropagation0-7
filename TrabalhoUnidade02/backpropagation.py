@@ -26,9 +26,9 @@ pesosOcultaSaida = [[random.uniform(-1, 1) for _ in range(neuronios)]for _ in ra
 
 biasSaida = [random.uniform(-1, 1) for _ in range(3)]
 
-taxaAprendizado = 0.1
+taxaAprendizado = 0.01
 
-epocas = 10000
+epocas = 100001
 
 for epoca in range(epocas):
     erroRede = 0
@@ -104,7 +104,7 @@ for epoca in range(epocas):
 
     # Exibe erro a cada 1000 épocas
     if epoca % 1000 == 0:
-        print(f'Época {epoca}, Erro: {erroRede:.4f}')
+        print(f'Época {epoca}, Erro: {erroRede:.8f}')
 
 print("\nTeste Final:")
 for i in range(len(entradas)):
@@ -130,7 +130,7 @@ for i in range(len(entradas)):
 
 
     # Binariza a saída: se ≥ 0.5 → 1, senão → 0
-    saidaBinaria = [1 if v >= 0.5 else 0 for v in saida]
+    saidaBinaria = [1 if v >= 0.9 else 0 for v in saida]
 
     # Mostra os resultados
     print(f"Entrada: {entradas[i]:.2f} → Saída: {saidaBinaria}, Esperado: {alvo}")
