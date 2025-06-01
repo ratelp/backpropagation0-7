@@ -1,6 +1,7 @@
-
 from utils import arredondar_para_baixo, tangenteHiperbolica
 import random
+
+random.seed(50)
 
 entradas = [0, 1, 2, 3, 4, 5, 6, 7]
 saidaDesejada = [
@@ -28,7 +29,7 @@ biasSaida = [random.uniform(-1, 1) for _ in range(3)]
 
 taxaAprendizado = 0.01
 
-epocas = 100001
+epocas = 100_001
 
 for epoca in range(epocas):
     erroRede = 0
